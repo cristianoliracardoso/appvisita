@@ -1,0 +1,256 @@
+<ion-view>
+	<ion-nav-buttons class="bar bar-header">
+		<div class="h1 title">Reporte</div>
+		<button class="button button-icon ion-camera" ng-click="addPicture()"></button>
+	</ion-nav-buttons>
+	<ion-content >
+		<form name="createForm"
+		      novalidate="novalidate"
+		      ng-submit="trackReport(createForm)"
+		      class="create-form">
+			<ion-list>
+				<div class="list">
+					<!-- LOCALIZAÇÃO-->
+						<label class="item item-input " ng-class="{'has-error':createForm.cnpj.$invalid}">
+							<span ></span>
+							<input type="text"
+										 name="local"
+										 ng-model="formData.local"
+										 placeholder="Localização">
+						</label>
+						<label class="item item-input " ng-class="{'has-error':createForm.cnpj.$invalid}">
+							<span ></span>
+							<input type="hidden" ng-bind="addGeoLocation()">
+
+							<input type="text"
+			 								name="selo"
+											ng-model="formData.selo"
+			 					 		  placeholder="Selo">
+						</label>
+						<label class="item item-input " ng-class="{'has-error':createForm.nome.$invalid}">
+							<span ></span>
+
+
+							<input type="text"
+										 name="nometitular"
+										 ng-model="formData.nometitular"
+										 placeholder="Nome do Titular">
+						</label>
+						<label class="item item-input " ng-class="{'has-error':createForm.cnpj.$invalid}">
+							<span ></span>
+
+							<input type="text"
+			 								name="nascimento"
+											ng-model="formData.nascimento"
+			 					 		  placeholder="Data de Nascimento">
+						</label>
+						<label class="item item-input " ng-class="{'has-error':createForm.cnpj.$invalid}">
+							<span ></span>
+
+							<input type="text"
+			 								name="naturalidade"
+											ng-model="formData.naturalidade"
+			 					 		  placeholder="Naturalidade">
+						</label>
+						<div class="list">
+
+							<label class="item item-input item-select">
+
+
+								<div name="sexo" class="input-label" ng-model="formData.sexo">Sexo
+								</div>
+								<select>
+									<option selected></option>
+									<option>Masculino</option>
+									<option >Feminino</option>
+
+								</select>
+
+							</label>
+							<label class="item item-input " ng-class="{'has-error':createForm.cnpj.$invalid}">
+								<span ></span>
+
+								<input type="text"
+				 								name="CPF"
+												ng-model="formData.CPF"
+				 					 		  placeholder="CPF">
+							</label>
+
+						<div class="form-errors" ng-messages="createForm.cnpj.$error">
+							<div ng-messages-include="views/errors/form-errors.html"></div>
+						</div>
+
+					<!-- Tipo de Logradouro -->
+					<div class="list">
+
+
+
+
+
+
+							</label>
+							<div class="form-errors" ng-messages="createForm.cnpj.$error">
+								<div ng-messages-include="views/errors/form-errors.html"></div>
+							</div>
+
+						<!-- Presidente-->
+							<label class="item item-input " ng-class="{'has-error':createForm.presidente.$invalid}">
+								<span ></span>
+								<input type="text"
+											 name="rg"
+											 ng-model="formData.rg"
+											 placeholder="RG" >
+
+							</label>
+							<label class="item item-input " ng-class="{'has-error':createForm.cnpj.$invalid}">
+								<span ></span>
+
+								<input type="text"
+				 								name="emissor"
+												ng-model="formData.emissor"
+				 					 		  placeholder="emissor">
+							</label>
+							<label class="item item-input " ng-class="{'has-error':createForm.cnpj.$invalid}">
+								<span ></span>
+
+								<input type="text"
+				 								name="emissao"
+												ng-model="formData.imissao"
+												placeholder="Data de Emissão">
+							</label>
+							<div class="form-errors" ng-messages="createForm.presidente.$error">
+								<div ng-messages-include="views/errors/form-errors.html"></div>
+							</div>
+							<!-- Celular -->
+
+									<span ></span>
+
+										<div name="estadocivil" class="list" ng-model="formData.estadocivil">
+
+	  									<label class="item item-input item-select">
+	    									<div class="input-label" >
+	      										Estado Civil
+	    									</div>
+	    									<select>
+													<option selected></option>
+	      									<option>Solteiro(a)</option>
+	      									<option >Casado(a)</option>
+													<option >União Estável</option>
+													<option >Separados(a)</option>
+													<option >Divorciado(a)</option>
+													<option >Viúvo(a)</option>
+													<option >Outros</option>
+
+	    									</select>
+	  									</label>
+
+
+
+
+								<div class="form-errors" ng-messages="createForm.celular.$error">
+									<div ng-messages-include="views/errors/form-errors.html"></div>
+								</div>
+							<!-- Associados -->
+								<label class="item item-input " ng-class="{'has-error':createForm.associados.$invalid}">
+									<span ></span>
+									<input type="text"
+												 name="endres"
+												 ng-model="formData.endres"
+												  placeholder="Endereço Residencial">
+								</label>
+								<div class="form-errors" ng-messages="createForm.associados.$error">
+									<div ng-messages-include="views/errors/form-errors.html"></div>
+								</div>
+							<!-- Celular -->
+								<label class="item item-input " ng-class="{'has-error':createForm.associados_habitacionais.$invalid}">
+									<span ></span>
+									<input type="text"
+												 name="telefone"
+												 ng-model="formData.telefone"
+												  placeholder="Fone Residencial / Celular">
+								</label>
+								<div class="form-errors" ng-messages="createForm.telefone.$error">
+									<div ng-messages-include="views/errors/form-errors.html"></div>
+								</div>
+						<!-- nº de ambientes -->
+						<div class="list">
+
+							<label class="item item-input item-select">
+
+
+								<div name="recebe_aposentadoria"class="input-label" ng-model="formData.recebe_aposentadoria">Recebe Aposentadoria?
+								</div>
+								<select>
+									<option selected></option>
+									<option>Sim</option>
+									<option >Não</option>
+
+								</select>
+
+							</label>
+						<!-- Salas-->
+						<div class="list">
+
+							<label class="item item-input item-select">
+
+
+								<div name="recebe_beneficio"class="input-label" ng-model="formData.recebe_beneficio">Recebe Benefício?
+								</div>
+								<select>
+									<option selected></option>
+									<option>Não</option>
+									<option >Bolsa Família</option>
+									<option >BPC</option>
+									<option >Auxilio-Reclusão</option>
+
+								</select>
+
+							</label>
+							<div class="list">
+
+								<label class="item item-input item-select">
+
+
+									<div name="recebe_pensao"class="input-label" ng-model="formData.recebe_pensao">Recebe Pensão?
+									</div>
+									<select>
+										<option selected></option>
+										<option>Não</option>
+										<option >Alimentícia</option>
+										<option >Por Morte</option>
+										<option >Por Doença</option>
+
+									</select>
+
+								</label>
+
+								<label class="item item-input " ng-class="{'has-error':createForm.presidente.$invalid}">
+									<span ></span>
+									<input type="text"
+												 name="numero_nis"
+												 ng-model="formData.numero_nis"
+												 placeholder="N° do NIS" >
+
+
+								</label>
+								<label class="item item-input " ng-class="{'has-error':createForm.presidente.$invalid}">
+									<span ></span>
+
+									<input type="text"
+												 name="renda_familiar"
+												 ng-model="formData.renda_familiar"
+												 placeholder="Renda Familiar R$">
+
+								</label>
+
+
+
+
+
+
+			<div class="padding">
+				<button class="button button-positive button-block" type="submit"> Reportar </button>
+			</div>
+		</form>
+	</ion-content>
+</ion-view>
