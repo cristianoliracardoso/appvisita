@@ -779,6 +779,7 @@ $dark:                            #444 !default;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+
 .ion-alert:before {
   content: ""; }
 

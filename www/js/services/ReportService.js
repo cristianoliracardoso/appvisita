@@ -73,14 +73,17 @@ app.service("ReportService", function ($q, AuthService, $cordovaGeolocation, $io
 			report.set("emissor", data.emissor);
 			report.set("emissao", data.emissao);
 			report.set("estadocivil", data.estadocivil);
+			report.set("nome_conjuge", data.nome_conjuge);
+			report.set("CPF_conjuge", data.CPF_conjuge);
 			report.set("endres", data.endres);
 			report.set("telefone", data.telefone);
 		//	report.set("assembleias", data.assembleias);
 			report.set("recebe_aposentadoria", data.recebe_aposentadoria);
 			report.set("recebe_beneficio", data.recebe_beneficio);
 			report.set("recebe_pensao", data.recebe_pensao);
-			report.set("numero_nis", user);
-			report.set("renda_familiar", file);
+			report.set("pessoas_residencia", data.pessoas_residencia);
+			report.set("numero_nis", data.numero_nis);
+			report.set("renda_familiar", data.renda_familiar);
 			if (lat != ''){
 				report.set("localizacao",point);
 			}
